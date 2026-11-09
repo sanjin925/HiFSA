@@ -209,33 +209,3 @@ python train.py \
 For the full training, testing, evaluation, and ablation commands, see
 [README.md](README.md).
 
-## Troubleshooting
-
-### `ModuleNotFoundError`
-
-Activate the `hifsa` environment and install the missing package with
-`python -m pip install <package>`. For example, the import name
-`open_clip` is provided by the package `open_clip_torch`.
-
-### CUDA is unavailable
-
-Confirm that the active environment contains the CUDA-enabled PyTorch
-wheel and that the installed NVIDIA driver supports it.
-
-### Hugging Face download errors
-
-Check network connectivity, cache permissions, and write access to the
-repository's `checkpoints/` directory. The pretrained checkpoint is not
-bundled with the code archive.
-
-### Missing images, masks, or prompt spreadsheets
-
-Verify the configured dataset paths and the exact prompt columns:
-`Image`, `Ground Truth`, and `Description`. Check that every filename
-resolves to an existing file.
-
-### Low-annotation experiment uses the wrong split
-
-Inspect the log messages that print the selected train and validation
-prompt paths. Create the required subset spreadsheets if the loader has
-selected the full split files.
